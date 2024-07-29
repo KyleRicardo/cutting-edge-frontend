@@ -15,7 +15,7 @@ title: Cutting Edge Frontend Technologies
   <span>Frontend Technologies </span>
   <sup font-hand text-lime2 v-click>2024</sup>
 </div>
-<div text-lg mt10 forward:delay-300 v-click="1">Shao Yan Ze (Kyle Ricardo)</div>
+<div text-xl mt10 forward:delay-300 v-click="1">Shao Yan Ze (Kyle Ricardo)</div>
 </h1>
 
 <div abs-br mx-10 my-11 flex="~ col gap-4 items-end" text-left v-click="1">
@@ -254,8 +254,6 @@ title: Vite
 </div>
 
 ---
-glowX: 50
-glowY: 130
 glowHue: 180
 class: flex flex-col items-center justify-center
 title: ky
@@ -272,8 +270,6 @@ title: ky
 </div>
 
 ---
-glowX: 50
-glowY: 130
 class: flex flex-col items-center justify-center
 title: SWR
 ---
@@ -290,8 +286,176 @@ And the UI will be always <span v-mark.green.delay2500="2">fast</span> and <span
 </div>
 
 ---
-glowX: 50
-glowY: 130
+
+# Why you should not directly use `useEffect` <br>to fetch data from API in React
+
+Especially using redux dispatch in `useEffect`
+
+<div pt6 />
+
+<v-clicks flex="~ col gap-8">
+
+- Most network requests should be sent in the <span text-lime2>Event Handler</span>
+- First screen data can be rendered directly on the server side <span text-green2>(SSR)</span>
+- "Render as you fetch" - based on <span text-teal2>Suspense</span>
+- "Fetch on render" - use <span text-sky>SWR</span> or <span text-sky>React Query</span> instead
+
+</v-clicks>
+
+---
+class: grid grid-cols-[auto_640px] gap-4 items-center justify-center
+---
+# Start from sending a simple request
+
+<div grid="~ cols-2 gap-x-2" mt8>
+  <ul flex="~ col gap-8">
+    <li v-click>You are building an React app</li>
+    <li v-click>You need to fetch product list data from API</li>
+    <li v-click>Network request is render's side effect</li>
+    <li v-click><code>useEffect</code> is the dedicated hook for side effect</li>
+    <li v-click>Without hesitation, you implemented this</li>
+  </ul>
+
+<div v-click="5">
+
+```tsx
+function ProductList() {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    fetch('https://dummyjson.com/products')
+      .then(res => res.json())
+      .then(data => setProducts(data))
+  }, [])
+
+  return (
+    <ul>
+      {products.map(product => (
+        <Product {...product} key={product.id} />
+      ))}
+    </ul>
+  )
+}
+```
+
+</div>
+</div>
+
+---
+class: grid grid-cols-2 gap-4 justify-center
+glow: left
+---
+
+  <div flex="~ col gap-8">
+    <h1>Display loading and error</h1>
+    <ul flex="~ col gap-8">
+      <li v-click transition duration-200 :class="$clicks >= 8 ? 'op50' : ''">You find there's the blank screen before the whole data is loaded</li>
+      <li v-click transition duration-200 :class="$clicks >= 8 ? 'op50' : ''">The user experience is terrible</li>
+      <li v-click transition duration-200 :class="$clicks >= 8 ? 'op50' : ''">You decide to add a loading progress bar</li>
+      <li v-click transition duration-200 :class="$clicks >= 8 ? 'op50' : ''">Introducing a new state <code>isLoading</code></li>
+      <li v-click="8">You also need to display error or report it</li>
+      <li v-click="9">Introducing a new state <code>error</code></li>
+    </ul>
+  </div>
+
+<div my--10>
+````md magic-move
+
+```tsx
+function ProductList() {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    fetch('https://dummyjson.com/products')
+      .then(res => res.json())
+      .then(data => setProducts(data))
+  }, [])
+
+  return (
+    <ul>
+      {products.map(product => (
+        <Product {...product} key={product.id} />
+      ))}
+    </ul>
+  )
+}
+```
+
+```tsx {*|2,6,11,15-18|*|*|*}
+function ProductList() {
+  const [isLoading, setIsLoading] = useState(true)
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    setIsLoading(true)
+    fetch('https://dummyjson.com/products')
+      .then(res => res.json())
+      .then((data) => {
+        setProducts(data)
+        setIsLoading(false)
+      })
+  }, [])
+
+  if (isLoading) {
+    { /* TODO 实现一个骨架屏 <Skeleton /> 改善 UX、避免 CLS */ }
+    return <Loading>正在玩命加载中...</Loading>
+  }
+
+  return (
+    <ul>
+      {products.map(product => (
+        <Product {...product} key={product.id} />
+      ))}
+    </ul>
+  )
+}
+```
+
+```tsx {*|4,14-17,25-28}
+function ProductList() {
+  const [isLoading, setIsLoading] = useState(true)
+  const [products, setProducts] = useState([])
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    setIsLoading(true)
+    fetch('https://dummyjson.com/products')
+      .then(res => res.json())
+      .then((data) => {
+        setProducts(data)
+        setIsLoading(false)
+      })
+      .catch((err) => {
+        // TODO 错误日志上报
+        setError(err)
+      })
+  }, [])
+
+  if (isLoading) {
+    { /* TODO 实现一个骨架屏 <Skeleton /> 改善 UX、避免 CLS */ }
+    return <Loading>正在玩命加载中...</Loading>
+  }
+
+  if (error) {
+    { /* TODO 添加「重试」按钮 */ }
+    return <div>出现错误啦！</div>
+  }
+
+  return (
+    <ul>
+      {products.map(product => (
+        <Product {...product} key={product.id} />
+      ))}
+    </ul>
+  )
+}
+```
+
+````
+</div>
+
+---
+glowHue: 25
 class: flex flex-col items-center justify-center
 title: Tailwind CSS
 ---
@@ -303,12 +467,10 @@ title: Tailwind CSS
 <div i-logos-tailwindcss-icon text-5em mt--10 />
 <h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em text-white>Rapidly build modern websites<br>without ever leaving your HTML.</h1>
 <div v-click text-xl op75 text-center>
-A utility-first CSS framework designed to<br>enable users to create applications faster and easier.
+"A utility-first CSS framework designed to<br>enable users to create applications faster and easier."
 </div>
 
 ---
-glowX: 50
-glowY: 130
 glowHue: 80
 class: flex flex-col items-center justify-center
 title: Zod
@@ -342,8 +504,6 @@ title: ESLint
 </div>
 
 ---
-glowX: 50
-glowY: 130
 class: flex flex-col items-center justify-center
 title: Vitest
 ---
@@ -378,7 +538,7 @@ title: Slidev
 </div>
 
 <div i-logos-slidev text-5em mt--10 />
-<h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em text-white>Presentation Slides<br><span text-sky>for Developers</span></h1>
+<h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em text-white>Presentation Slides<br><span text-cyan>for Developers</span></h1>
 <div v-click text-xl op75 text-center>
 "A web-based slides maker and presenter.<br>It's designed for developers to focus on writing content in Markdown."
 </div>
