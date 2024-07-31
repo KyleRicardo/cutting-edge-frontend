@@ -359,8 +359,8 @@ glow: left
   </div>
 
 <div my--10>
-````md magic-move
 
+````md magic-move
 ```tsx
 function ProductList() {
   const [products, setProducts] = useState([])
@@ -450,12 +450,13 @@ function ProductList() {
   )
 }
 ```
-
 ````
 </div>
 
 ---
 glowHue: 25
+glowX: 50
+glowY: 50
 class: flex flex-col items-center justify-center
 title: Tailwind CSS
 ---
@@ -467,8 +468,137 @@ title: Tailwind CSS
 <div i-logos-tailwindcss-icon text-5em mt--10 />
 <h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em text-white>Rapidly build modern websites<br>without ever leaving your HTML.</h1>
 <div v-click text-xl op75 text-center>
-"A utility-first CSS framework designed to<br>enable users to create applications faster and easier."
+"A utility-first CSS framework packed with classes like <code>flex</code>, <code>pt-4</code>, <code>text-center</code> and <code>rotate-90</code> that can be composed to build any design, directly in your markup."
 </div>
+
+---
+
+# Utility-First Fundamentals
+
+<div v-click absolute transition-all duration-400 ease-in-out :class="$clicks <= 1 ? 'left-35% bottom-40%' : 'left-58% bottom-20%'">
+<div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+  <div class="shrink-0">
+    <img class="size-12" src="/chitchat.svg" alt="ChitChat Logo">
+  </div>
+  <div>
+    <div class="text-xl font-medium text-black">ChitChat</div>
+    <div class="text-slate-500">You have a new message!</div>
+  </div>
+</div>
+</div>
+
+<div grid="~ cols-2 gap-6">
+<div v-click flex="~ col gap-2">
+<div flex="~ gap-2 items-center" text-xs><div i-mdi-cross-circle text-red4 />Using a traditional approach where custom designs require custom CSS</div>
+
+```html {*}{class:'!children:text-[6px]/1'}
+<div class="chat-notification">
+  <div class="chat-notification-logo-wrapper">
+    <img class="chat-notification-logo" src="/img/logo.svg" alt="ChitChat Logo">
+  </div>
+  <div class="chat-notification-content">
+    <h4 class="chat-notification-title">ChitChat</h4>
+    <p class="chat-notification-message">You have a new message!</p>
+  </div>
+</div>
+
+<style>
+  .chat-notification {
+    display: flex;
+    align-items: center;
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  .chat-notification-logo-wrapper {
+    flex-shrink: 0;
+  }
+  .chat-notification-logo {
+    height: 3rem;
+    width: 3rem;
+  }
+  .chat-notification-content {
+    margin-left: 1.5rem;
+  }
+  .chat-notification-title {
+    color: #1a202c;
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+  .chat-notification-message {
+    color: #718096;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+</style>
+```
+
+</div>
+
+<div v-click flex="~ col gap-2">
+<div flex="~ gap-2 items-center" text-xs><div i-mdi-tick-circle text-cyan />Using utility classes to build custom designs without writing CSS</div>
+
+```html {*}{class:'!children:text-[8px]/1'}
+<div class="p-6 max-w-sm mx-auto bg-white rounded-xl
+           shadow-lg flex items-center space-x-4">
+  <div class="shrink-0">
+    <img class="size-12" src="/img/logo.svg" alt="ChitChat Logo">
+  </div>
+  <div>
+    <div class="text-xl font-medium text-black">ChitChat</div>
+    <p class="text-slate-500">You have a new message!</p>
+  </div>
+</div>
+```
+
+</div>
+
+</div>
+
+---
+
+# Fundamentals
+
+<div grid="~ cols-[max-content_min-content_max-content] items-center gap-6" py8 px3>
+  <div><code>display: flex;</code></div>
+  <div i-ph-arrow-right-duotone op50 v-click />
+  <div><code v-after>flex</code></div>
+
+  <div><code>align-items: center;</code></div>
+  <div i-ph-arrow-right-duotone op50 v-click />
+  <div><code v-after>items-center</code></div>
+
+  <div><code>max-width: 24rem;</code></div>
+  <div i-ph-arrow-right-duotone op50 v-click />
+  <div><code v-after>max-w-sm</code></div>
+
+  <div><code>margin: 0 auto;</code></div>
+  <div i-ph-arrow-right-duotone op50 v-click />
+  <div><code v-after>mx-auto</code></div>
+
+  <div><code>padding: 1.5rem;</code></div>
+  <div i-ph-arrow-right-duotone op50 v-click />
+  <div><code v-after>p-6</code></div>
+
+  <div><code>border-radius: 0.5rem;</code></div>
+  <div i-ph-arrow-right-duotone op50 v-click />
+  <div><code v-after>rounded-xl</code></div>
+
+  <div><code>background-color: #fff</code></div>
+  <div i-ph-arrow-right-duotone op50 v-click />
+  <div><code v-after>bg-white</code></div>
+</div>
+
+---
+layout: quote
+---
+
+"This is an atrocity, what a horrible mess!"
+<br>
+<div>"There are 2 hard problems in computer science: cache invalidation, <span v-mark.lime.box>naming things</span>, and off-by-1 errors."</div>
 
 ---
 glowHue: 80
