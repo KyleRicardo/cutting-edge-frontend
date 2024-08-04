@@ -4,9 +4,9 @@
   "private": true,
   "packageManager": "pnpm@9.6.0",
   "scripts": {
-    "dev": "slidev",
-    "build": "slidev build --base /2024/vue-amsterdam/ --out ../../dist/2024/vue-amsterdam",
-    "export": "slidev export --per-slide --output ../2024-02-29-vue-amsterdam-en.pdf"
+    "dev": "slidev --open",
+    "build": "slidev build",
+    "export": "slidev export"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.24.0",
@@ -30,7 +30,7 @@
     "prompts": "^2.4.2",
     "rimraf": "^6.0.1",
     "seedrandom": "^3.0.5",
-    "taze": "^0.14.3",
+    "taze": "^0.16.3",
     "typescript": "^5.5.4",
     "unocss": "^0.61.8",
     "vue-router": "^4.4.0",
