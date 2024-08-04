@@ -29,7 +29,7 @@ A tiny and elegant HTTP client based on the [Fetch API](https://developer.mozill
 - ESM first design
 - Built-in retries, timeouts, and hooks
 - Supports Readable Streams out of the box
-- TypeScript niceties (e.g. `.json()` resolves to `unknown`, not `any`; `.json<T>()` can be used too)
+- TypeScript out of the box
 
 画个图表
 
@@ -100,8 +100,6 @@ A small, fast, and scalable bearbones state management solution.
 
 ### Why zustand
 
-
-
 ### Compare to Redux and Pinia
 
 ### Introduce the siblings: jotai and valtio
@@ -125,4 +123,3 @@ A small, fast, and scalable bearbones state management solution.
 zero config
 
 ### Compare to Jest
-

@@ -13,7 +13,6 @@ title: Cutting Edge Frontend Technologies
 <div text-2xl origin-top-left transition duration-500 :class="$clicks <= 2 ? 'scale-150' : 'op50'">
   <span v-click>Cutting Edge </span>
   <span>Frontend Technologies </span>
-  <sup font-hand text-lime2 v-click>2024</sup>
 </div>
 <div text-xl mt10 forward:delay-300 v-click="1">Shao Yan Ze (Kyle Ricardo)</div>
 </h1>
@@ -25,18 +24,7 @@ title: Cutting Edge Frontend Technologies
 </div>
 
 <!--
-I am really appericated the chance I got that allows me to work on Open Source full-time. I'd like to say thank you for everyone that giving the support and opportunities and made this possible to me.
-
-It was always my dream to work in Open Source and build things that can help people around the world, attending awesome events like this, and meeting so many great people in the community.
-
-I believe many of you are like me, are interested in doing open source. So today here, [click] I'd like to share some of my thoughts and experiences I got. Hopefully it can provide some inspirations for your own open source journey.
-
-Open source is quite a big topic that I can't really cover everything in one talk. [click] So I am trying to break it down and talk about different aspects of open source in each talk and make them a series.
-Today, it's going to be the Part 2 - [click] "The Progressive Path".
--->
-
-<!--
-Hello everyone! I am very glad to be here and I hope you have enjoyed the conference so far. Today it's talk about something soft, non-technical, and maybe more like some ideas. Hope it can bring you some thoughts and inspirations.
+很高兴能做这次技术分享。
 -->
 
 ---
@@ -44,12 +32,13 @@ layout: center
 class: text-center
 glowX: 50
 glowY: 100
+title: What is cutting edge?
 ---
 
-<h1 important-text-5xl v-click>What is cutting edge?</h1>
+<h1 important-text-5xl>What is cutting edge?</h1>
 
 <div text-white:50 text-2xl v-click>
-Technologies that are at the forefront of current trends and advancements, representing the <span text-yellow2 italic v-mark.yellow.underline.delay1300="2">latest</span> and <span text-lime2 v-mark.lime.underline.delay1700="2">most advanced</span> stage in development
+Technologies that are at the forefront of current trends and advancements, representing the <span text-yellow2 v-mark.yellow.underline.delay300="2">latest</span> and <span text-lime2 v-mark.lime.underline.delay700="2">most advanced</span> stage in development
 </div>
 
 ---
@@ -57,185 +46,16 @@ layout: center
 class: text-center
 glowX: 50
 glowY: 100
+title: What is bleeding edge?
 ---
 
-<div font-hand bold absolute rotate--4 left-124 top-40 text-3xl text-red delay-1200 v-click="4">You may get hurt by using it</div>
+<div font-hand bold absolute rotate--4 left-124 top-40 text-3xl text-red delay-1200 v-click="3">You may get hurt by using it</div>
 
-<h1 important-text-5xl v-click>What is <span v-mark.red.circle.delay200="4">bleeding</span> edge?</h1>
+<h1 important-text-5xl>What is <span v-mark.red.circle.delay200="3">bleeding</span> edge?</h1>
 
 <div text-white:50 text-2xl v-click>
-Technologies or products that are <span text-yellow2 italic v-mark.yellow.underline.delay300="2">so new</span> and <span text-lime2 v-mark.lime.underline.delay700="2">innovate</span> <br>that they <span text-red v-mark.red.underline.delay300="3">have not</span> been widely tested or used
+Technologies or products that are <span text-yellow2 v-mark.yellow.underline.delay300="1">so new</span> and <span text-lime2 v-mark.lime.underline.delay700="1">innovate</span> <br>that they <span text-red v-mark.red.underline.delay300="2">have not</span> been widely tested or used
 </div>
-
----
-glow: right
-class: text-center
-clicks: 5
-title: What technology should we choose?
----
-
-<div transition duration-800 :class="$clicks < 2 ? 'translate-y-45' : ''" relative>
-
-# What Makes a <span v-mark.linethrough.red.delay200="{at:1,roughness:6,seed:146}" transition inline-block :class="$clicks >= 1 ? 'op50' : ''"> Good</span> Tool?
-
-<div font-hand bold absolute rotate--4 left-106 top-10 text-3xl text-lime1 delay-300 v-click>General & Useful</div>
-
-</div>
-
-<div left-70 top-15 relative transition duration-400 forward:delay-600 v-click="2">
-  <img src="/balance-body.png" w-80 absolute left-0 top-0 />
-  <img
-    src="/balance-arm.png"
-    w-80 absolute left-0 top-0 transition duration-1000
-    class="origin-[50%_27%]"
-    :class="$clicks >= 5 ? 'animate-balance-shake' : ''"
-  />
-  <div transition duration-1000 :class="$clicks >= 5 ? 'animate-balance-move-left' : ''" >
-    <img src="/cost-of-learn.png" w-30 absolute left--35 top-20 duration-800 v-click="4" />
-    <img src="/balance-balls-left.png" w-80 absolute left-0 top-0 v-click="3" />
-    <img src="/balance-left.png" w-80 absolute left-0 top-0 />
-  </div>
-  <div transition duration-1000 :class="$clicks >= 5 ? 'animate-balance-move-right' : ''" >
-    <img src="/cost-of-doing.png" w-28 absolute left-85 top-34 duration-800 v-click="4" />
-    <img src="/balance-ball-right.png" w-80 absolute left-0 top-0 v-click="3" />
-    <img src="/balance-right.png" w-80 absolute left-0 top-0 />
-  </div>
-</div>
-
-<!--
-So assume we want to build a new open source project, a tool for people to use. What would you consider to justify if the tool you going to build is a good one or not?
-
-Well, my answer is no, you can't not really tell that without being verified by the community - because there are so many factors that can affect if an open source project would work out or not.
-
-But also, I want to emphasize that in this context, "Good" is a relative term that deps on your expectation.
-It's totally ok to build a tool that solves your own problem and call it a day - it's a great tool that works for you anyway.
-Actually I have a plenty of such tools and I am happy about that even no one else is using them, but they get my job done at the end of the day, right?
-
-So let's revise our goal. Let's say we want to build a tool that can be beneficial to not only ourselves but also to more people, and probably the community could also help us to make the tool better for everyone.
-
-[click] So the question becomes how could we make a general and useful tool for ppl to use?.
-
-[click] I'd say every decision comes with a trade-off. When users consider if they want to use a tool, they would justify and cost and the benefits they can get from it.
-
-[click] So here we have a balance. If I gonna to put two most important factors on the balance, I'd pick "Cost of learning and using the tools" verse the "Cost of doing something oneself".
-
-[click] In order to make users willing to use our tool, I'd say that the "Cost of learning" should be much less than the "Cost of doing"
-[click] This has been my little go-to formula to pre-evaluate if idea I have is worthwhile.
-
-For example, let's say if we want to get a summary of 10 numbers. Would you look for a library to do that? Probably no, because we could do it with a single loop in 2 line of code - the cost of doing ourself is too low that we don't even consider getting a tool.
-
-But if we are going to do some calculus, I am certainly going to find a library to do it for me, because I basically forget everything I learned in my college XD.
-
-However, on the other hand, if the library we picked requires us to understand like 100 different configurations before being able to use it, uhumm, we probably going to find another library that might be easier.
-
-Thus we know that, when we are making tools, we have to think about those cases and find a good balance to make the tool worthwhile.
--->
-
----
-class: text-2xl
-glow: right
-title: Make things easier!
----
-
-# Make things <span font-hand text-green scale-110 ml1 inline-block>Easier!</span>
-
-<div flex="~ gap-2 items-center" text-indigo mt-15 v-click>
-  <div i-ph-hammer-duotone text-2xl />
-  <span>Cost of Using a Tool</span>
-</div>
-
-<div grid="~ cols-[max-content_min-content_auto] items-center gap-6" py8 px3>
-  <div flex="~ gap-2 items-center" text-blue relative v-click>
-    <div w-35px h-45px border="l b gray/30" left-0 bottom-15px absolute />
-    <div i-ph-magnifying-glass-duotone text-2xl ml-12/>
-    <span>Cost of Discovering</span>
-  </div>
-  <div i-ph-arrow-right-duotone op50 v-click />
-  <div v-after>Common needs, easy to find</div>
-
-  <div flex="~ gap-2 items-center" text-lime relative v-click>
-    <div w-35px h-56px border="l b gray/30" left-0 bottom-15px absolute />
-    <div i-ph-book-bookmark-duotone text-2xl ml-12/>
-    <span>Cost of Learning</span>
-  </div>
-  <div i-ph-arrow-right-duotone op50 v-click />
-  <div v-after>Easy to understand and get started</div>
-
-  <div flex="~ gap-2 items-center" text-amber relative v-click>
-    <div w-35px h-56px border="l b gray/30" left-0 bottom-15px absolute />
-    <div i-ph-currency-circle-dollar-duotone text-2xl ml-12/>
-    <span>Price</span>
-  </div>
-  <div i-ph-arrow-right-duotone op50 v-click />
-  <div v-after>Usually free in Open Source! 💛</div>
-
-  <div flex="~ gap-2 items-center" text-orange relative v-click>
-    <div w-35px h-56px border="l b gray/30" left-0 bottom-15px absolute />
-    <div i-ph-plugs-duotone text-2xl ml-12 />
-    <span>Cost of Adoption</span>
-  </div>
-  <div i-ph-arrow-right-duotone op50 v-click />
-  <div v-after>Provide integrations, extensibility</div>
-</div>
-
-<!--
-So, here we know that we should probably reduce the "Cost of using a tool" to make it easier for ppl to pick up.
-
-[click] From my point of view, the cost of a tool is composed by the following factors.
-
-[click] The first one is the "Cost of Discovering". [click] It's about how commonly for people to realize they need to find a tool for a certain task. It also means the tool should be well-described so that people can easily get what the tool is for with one or two sentences.
-
-[click] Then we have the "Cost of Learning". [click] This is a particularly important one in my opinion. It's about how easy for people to understand and get started with the tool. As the tool is supposed to be used and to make the actual work easier, we certainly don't want users to struggle on learning it for too long before they can be benefited from it.
-
-[click] And then we have the "Price". The cost of the tools itself. [click] We are lucky that in Open Source, the majority of the tools are free to use. Thanks to every maintainer and contributor behind the scenes and making so much awesome tools for everyone to use. And of course, on the other hand, if the tool is not free, this is definitely one of the factors that users would consider on choosing.
-
-[click] And the last one is the "Cost of Adoption". [click] Like how to install and integrate into ones project, how extensible the tool is for potential future needs, how migration would cost, etc.
-
-All those factors are introduced because of the use af an external tool. In the end, we want to see the cost of the tool to be paid off by the benefits it provides.
-
-We know that the complexity of things might transfer from one place to another, but not going to magically disappear. If we are solving a complex problem, it would be honestly hard to prevent the tool from getting complex too. For that, what I learned from the popular open source tools out there is something called "Progressive".
--->
-
----
-glow: bottom
----
-
-# What is Progressive?
-
-<div text-white:50 v-click="5">
-The <span v-mark.box.teal.delay400="5" text-teal mx1>"Stairs"</span> to make things easier to approach</div>
-
-<div absolute w-50 h-100 left-34 top-61 v-click>
-  <img
-    src="/progressive-anthony-char.png" absolute w-50 left-0 top-0 transition duration-500 class="origin-[35%_50%]"
-    :class="$clicks === 3 ? 'scale-x--100' : $clicks > 3 ? 'forward:delay-400' : ''"
-  />
-  <img src="/progressive-mark-question.png" absolute w-12 left--4 top--12 v-click="[3,4]">
-  <img src="/progressive-mark-bulb.png" absolute w-20 left-23 top--16 forward:delay-800 v-click="4" >
-</div>
-
-<div absolute w-230 right-0 top-5>
-  <img
-    src="/progressive-floors.png" duration-400
-    v-click
-    :class="$clicks >= 4 ? 'duration-700 forward:delay-200 op10' : ''"
-  />
-  <img src="/progressive-stairs.png" duration-400 absolute left-0 top-0 v-click="4">
-</div>
-
-<!--
-So, after this long intro, finally we are back to our topic today - what's is Progressive?
-
-I think progressive a self is pretty self explaining. But here let's take a quick example with illustrations:
-
-[click] So this is me, [click] and I am trying to get from the first floor to the second. But unfortunately, I hit a wall. The only way to get to there is to jump through the wall. But I'm not a very sports person, so I'm not able to jump that high. In case I might end giving up and turn back around. [click] That's a shame because I failed to accomplish what I aiming for because it's too hard.
-
-So from a progressive perspective, I think that's why stairs has been invented.
-
-[click] It allows me to take multiple smaller steps to going upward, and eventually achieve a certain goal that will be very hard to reach without it.
-
-[click] So here, my interpretation to progressive is that the "stairs" to make things easier to approach.
--->
 
 ---
 glowHue: 100
@@ -254,6 +74,116 @@ title: Vite
 </div>
 
 ---
+
+# What is Vite?
+
+<div op70>French word for "quick", pronounced <code>/vɪt/</code>, like "veet"</div>
+
+<div grid="~ cols-2 gap4" my8>
+  <div flex="~ col gap2">
+    <div v-click>A dev server</div>
+    <div v-click flex="~ col gap4" pl4 mt6>
+      <div><div flex="~ items-center gap2"><div i-logos-esbuild /><span text-yellow>Esbuild</span> under the hood</div></div>
+      <div>Using native ES modules</div>
+      <div>Blazing fast Hot Module Replacement(HMR)</div>
+      <div><div flex="~ items-center gap2"><div i-logos-typescript-icon /><span text-blue>Typescript</span> out of the box</div></div>
+    </div>
+  </div>
+  <div flex="~ col gap2">
+    <div v-click>A build command</div>
+    <div v-click flex="~ col gap4" pl4 mt6>
+      <div><div flex="~ items-center gap2"><div i-logos-rollup /><span text-red>Rollup</span> under the hood</div></div>
+      <div>Flexible plugin API</div>
+      <div>Contributes Vite's success in the ecosystem</div>
+      <div><div flex="~ items-center gap2">Much faster with <img src="/lightning-down.svg" w4 /><span text-orange>Rolldown</span><sup op50 italic font-serif>Coming soon</sup></div></div>
+    </div>
+  </div>
+</div>
+
+---
+
+# Why Vite?
+
+<h2 v-click op70>The Problem: Slow server start</h2>
+
+<div grid="~ cols-2 gap4" my8>
+<img v-click src="/bundle-based-dev-server.svg" rounded-3xl bg-teal bg-op5 />
+<img v-click src="/native-esm-based-dev-server.svg" rounded-3xl bg-teal bg-op5 />
+</div>
+
+<div v-click>Vite only needs to transform and serve source code on demand, as the browser requests it.</div>
+
+---
+
+# Why Vite?
+
+<h2 v-click op70>The Problem: Slow updates</h2>
+
+<div flex="~ col gap2" mt4>
+<div v-click>
+  <div>Bundler based build setup</div>
+  <div op50>Rebuild the whole bundle</div>
+</div>
+<div v-click>
+  <div>Invalidate part of its module graph</div>
+  <div op50>Reconstructing the bundle can be expensive, and reloading the page blows away the current state of the application</div>
+</div>
+<div v-click>
+  <div>Hot Module Replacement (HMR)</div>
+  <div op50>Even HMR update speed deteriorates significantly as the size of the application grows</div>
+</div>
+<div v-click>
+  <div>HMR over native ESM</div>
+  <div op50>HMR updates consistently fast regardless of the size of your application</div>
+</div>
+</div>
+
+<div v-click mt4>"Once you experience how fast Vite is, we highly doubt you'd be willing to put up with bundled development again."</div>
+
+---
+
+# Why is Vite so <span font-hand text-green scale-110 ml1 inline-block>fast?</span>
+
+<div flex="~ gap8 items-center" mt8>
+  <div flex="~ col gap2 items-center">
+    <div flex="~ gap2 items-center" text-yellow text-5xl><div i-logos-esbuild />esbuild</div>
+    <div flex="~ gap2 items-center"><span text-green>10-100x</span> faster than<div i-logos-webpack /><span text-sky>Webpack</span></div>
+    <div flex="~ gap2 items-center">Written in <div i-logos-go /><span text-sky></span></div>
+  </div>
+  <div i-ph-arrow-right-duotone />
+  <div flex="~ col gap2 items-center">
+    <div flex="~ gap2 items-center" text-red text-5xl><div i-logos-turbopack-icon />Turbopack</div>
+    <div flex="~ gap2 items-center"><span text-green>~700x</span> faster than<div i-logos-webpack /><span text-sky>Webpack</span></div>
+    <div flex="~ gap2 items-center"><span text-green>"10x"</span> faster than<div i-logos-vitejs /><span text-purple>Vite</span></div>
+    <div flex="~ gap2 items-center">Written in <img src="/ferris.svg" w-8 /><span text-orange>Rust</span></div>
+  </div>
+</div>
+
+<div flex="~ gap8 items-center" mt8>
+  <div flex="~ col gap2 items-center">
+    <div flex="~ gap2 items-center" text-yellow text-5xl><div i-logos-babel /></div>
+    <div op50>Very slow</div>
+    <div flex="~ gap2 items-center">Written in <div i-logos-javascript /><span text-yellow>JavaScript</span></div>
+  </div>
+  <div i-ph-arrow-right-duotone />
+  <div flex="~ col gap2 items-center">
+    <div flex="~ gap2 items-center" text-red text-5xl><div i-logos-swc /></div>
+    <div flex="~ gap2 items-center"><span text-green>20-70x</span> faster than<div i-logos-babel /></div>
+    <div flex="~ gap2 items-center">Written in <img src="/ferris.svg" w-8 /><span text-orange>Rust</span></div>
+  </div>
+  <div i-ph-arrow-right-duotone />
+  <div flex="~ col gap2 items-center">
+    <div flex="~ gap2 items-center" text-red text-5xl><img src="/lightning-down.svg" w-10 /><span text-orange>Rolldown</span></div>
+    <div flex="~ gap2 items-center"><span text-green>3x</span> faster than<div i-logos-swc /></div>
+    <div flex="~ gap2 items-center">Written in <img src="/ferris.svg" w-8 /><span text-orange>Rust</span></div>
+  </div>
+</div>
+
+<div font-hand bold absolute rotate--4 left-74 bottom-18 text-3xl text-orange delay-600 v-click="2">Rust</div>
+<div font-hand bold absolute rotate--4 left-118 bottom-18 text-3xl text-orange delay-2000 v-click="2">Rust</div>
+<div v-click="1" mt16>"If a program can be written in <span v-mark.linethrough.orange="2">C</span>, it will be written in <span v-mark.linethrough.orange.delay1000="2">C</span> eventually."</div>
+
+---
 glowHue: 180
 class: flex flex-col items-center justify-center
 title: ky
@@ -263,11 +193,91 @@ title: ky
 <span op50>https://</span>github.com/sindresorhus/ky
 </div>
 
-<img src="/ky-logo.svg" w-40 text-5em mt--10 />
-<h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em style="background: -webkit-linear-gradient(120deg, #ffccca 30%, #f1423d);-webkit-background-clip: text;">Delightful HTTP Requests</h1>
+<img src="/ky-logo-white.svg" w-40 text-5em mt--10 />
+<h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em style="background: -webkit-linear-gradient(120deg, #ffccca 30%, #f1423d);-webkit-background-clip: text;">Delightful<br>HTTP Requests</h1>
 <div v-click text-xl op75>
 "Tiny & elegant JavaScript HTTP client based on the Fetch API"
 </div>
+
+---
+
+# Why ky over fetch?
+
+<v-clicks flex="~ col gap2">
+
+- Simpler API
+- Method shortcuts (`ky.post()`)
+- Treats non-2xx status codes as errors (after redirects)
+- Retries failed requests
+- JSON option
+- Timeout support
+- URL prefix option
+- Instances with custom defaults
+- Hooks
+- TypeScript niceties (e.g. `.json()` resolves to `unknown`, not `any`; `.json<T>()` can be used too)
+
+</v-clicks>
+
+---
+
+# Why ky over fetch?
+
+<div grid="~ cols-2 gap4">
+  <div flex="~ col gap2">
+    <div>Using plain fetch</div>
+
+```ts
+class HTTPError extends Error {}
+
+const response = await fetch('https://example.com', {
+  method: 'POST',
+  body: JSON.stringify({ foo: true }),
+  headers: {
+    'content-type': 'application/json'
+  }
+})
+
+if (!response.ok) {
+  throw new HTTPError(`Fetch error: ${response.statusText}`)
+}
+
+const json = await response.json()
+
+console.log(json)
+// => `{data: '🦄'}`
+```
+
+  </div>
+  <div flex="~ col gap2">
+    <div>Using ky</div>
+
+```ts
+import ky from 'ky'
+
+const json = await ky.post('https://example.com', {
+  json: { foo: true }
+}).json()
+
+console.log(json)
+// => `{data: '🦄'}`
+```
+
+  </div>
+</div>
+
+---
+
+# Why ky over axios?
+
+<v-clicks flex="~ col gap4" mt8>
+
+- Smaller bundle size (ky <span text-green>3.3KB</span> gzipped, axios <span text-yellow>11.7KB</span> gzipped)
+- ESM first design
+- Built-in retries, timeouts, and hooks
+- Supports Readable Streams out of the box
+- TypeScript out of the box
+
+</v-clicks>
 
 ---
 class: flex flex-col items-center justify-center
@@ -278,7 +288,7 @@ title: SWR
 <span op50>https://</span>swr.vercel.app
 </div>
 
-<div i-logos-swr invert text-5em mt--10 />
+<div i-logos-swr invert text-4em mt--10 mb4 />
 <h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em text-white><span op50>React Hooks</span><br>for Data Fetching</h1>
 <div v-click text-xl op75 text-center>
 "With SWR, components will get a stream of data updates <span v-mark.lime.delay1000="2">constantly</span> and <span v-mark.lime.delay1600="2">automatically</span>.<br>
@@ -303,18 +313,20 @@ Especially using redux dispatch in `useEffect`
 </v-clicks>
 
 ---
-class: grid grid-cols-[auto_640px] gap-4 items-center justify-center
+class: grid grid-cols-2 gap-4 items-center justify-center
+title: Start from sending a simple request
 ---
-# Start from sending a simple request
 
-<div grid="~ cols-2 gap-x-2" mt8>
-  <ul flex="~ col gap-8">
+<div flex="~ col gap-6">
+  <h1>Start from sending a simple request</h1>
+  <ul flex="~ col gap-4">
     <li v-click>You are building an React app</li>
     <li v-click>You need to fetch product list data from API</li>
     <li v-click>Network request is render's side effect</li>
     <li v-click><code>useEffect</code> is the dedicated hook for side effect</li>
     <li v-click>Without hesitation, you implemented this</li>
   </ul>
+</div>
 
 <div v-click="5">
 
@@ -339,24 +351,24 @@ function ProductList() {
 ```
 
 </div>
-</div>
 
 ---
 class: grid grid-cols-2 gap-4 justify-center
 glow: left
+title: Display loading and error
 ---
 
-  <div flex="~ col gap-8">
-    <h1>Display loading and error</h1>
-    <ul flex="~ col gap-8">
-      <li v-click transition duration-200 :class="$clicks >= 8 ? 'op50' : ''">You find there's the blank screen before the whole data is loaded</li>
-      <li v-click transition duration-200 :class="$clicks >= 8 ? 'op50' : ''">The user experience is terrible</li>
-      <li v-click transition duration-200 :class="$clicks >= 8 ? 'op50' : ''">You decide to add a loading progress bar</li>
-      <li v-click transition duration-200 :class="$clicks >= 8 ? 'op50' : ''">Introducing a new state <code>isLoading</code></li>
-      <li v-click="8">You also need to display error or report it</li>
-      <li v-click="9">Introducing a new state <code>error</code></li>
-    </ul>
-  </div>
+<div flex="~ col gap-8">
+  <h1>Display loading and error</h1>
+  <ul flex="~ col gap-8">
+    <li v-click transition duration-200 :class="$clicks >= 8 ? 'op50' : ''">You find there's the blank screen before the whole data is loaded</li>
+    <li v-click transition duration-200 :class="$clicks >= 8 ? 'op50' : ''">The user experience is terrible</li>
+    <li v-click transition duration-200 :class="$clicks >= 8 ? 'op50' : ''">You decide to add a loading progress bar</li>
+    <li v-click transition duration-200 :class="$clicks >= 8 ? 'op50' : ''">Introducing a new state <code>isLoading</code></li>
+    <li v-click="8">You also need to display error or report it</li>
+    <li v-click="9">Introducing a new state <code>error</code></li>
+  </ul>
+</div>
 
 <div my--10>
 
@@ -381,7 +393,7 @@ function ProductList() {
 }
 ```
 
-```tsx {*|2,6,11,15-18|*|*|*}
+```tsx {*|2,6,11,15-19|*|*|*}
 function ProductList() {
   const [isLoading, setIsLoading] = useState(true)
   const [products, setProducts] = useState([])
@@ -397,8 +409,9 @@ function ProductList() {
   }, [])
 
   if (isLoading) {
-    { /* TODO 实现一个骨架屏 <Skeleton /> 改善 UX、避免 CLS */ }
-    return <Loading>正在玩命加载中...</Loading>
+    { /* TODO implement a <Skeleton />
+    to improve UX and avoid CLS */ }
+    return <Loading>Loading...</Loading>
   }
 
   return (
@@ -426,19 +439,20 @@ function ProductList() {
         setIsLoading(false)
       })
       .catch((err) => {
-        // TODO 错误日志上报
+        // TODO report error logs
         setError(err)
       })
   }, [])
 
   if (isLoading) {
-    { /* TODO 实现一个骨架屏 <Skeleton /> 改善 UX、避免 CLS */ }
-    return <Loading>正在玩命加载中...</Loading>
+    { /* TODO implement a <Skeleton />
+    to improve UX and avoid CLS */ }
+    return <Loading>Loading...</Loading>
   }
 
   if (error) {
-    { /* TODO 添加「重试」按钮 */ }
-    return <div>出现错误啦！</div>
+    { /* TODO add Retry button */ }
+    return <div>Oops, something went wrong!</div>
   }
 
   return (
@@ -454,6 +468,100 @@ function ProductList() {
 </div>
 
 ---
+
+# DRY - Don't repeat yourself
+
+<div grid="~ cols-2 gap4">
+<div>
+Encapsulate a new hook
+
+```tsx
+function useFetch(url, requestInit = {}) {
+  const [isLoading, setIsLoading] = useState(true)
+  const [data, setData] = useState(null)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    setIsLoading(true)
+    fetch(url, requestInit)
+      .then(res => res.json())
+      .then((data) => {
+        setData(data)
+        setIsLoading(false)
+      })
+      .catch(err => setError(err))
+  }, [url, requestInit])
+
+  return { data, isLoading, error }
+}
+```
+
+</div>
+
+<div v-click>
+Now you can directly use it in your component:
+
+```tsx
+function ProductList() {
+  const { isLoading, data, error }
+    = useFetch('https://dummyjson.com/products')
+}
+
+function Product({ id }) {
+  const { isLoading, data, error }
+    = useFetch(`https://dummyjson.com/products/${id}`)
+}
+```
+
+</div>
+
+</div>
+
+---
+glow: left
+---
+
+# Oh and we need so much more...
+
+<div grid="~ cols-2 gap4">
+<v-clicks flex="~ col gap2">
+
+- Race condition
+- Cache network requests
+- <span v-mark.teal.box.delay1500="3">Cache invalidation</span>
+- Compatible for React 18 Concurrent Rendering
+- <span v-mark.orange.delay1500="5">Merge and deduplicate the requests</span>
+- Error retry
+- Preload
+- Pagination
+- Mutation and Optimistic updates
+- Middleware
+
+</v-clicks>
+
+<div flex="~ col gap6">
+  <div v-click="3" bg-teal:10 rounded-3xl p6 transition duration-200>
+    <p>There are two hard things in computer science: <span v-mark.teal.box.delay300="3">cache invalidation</span>, naming things, and off-by-one errors.</p>
+  </div>
+  <div v-click="5" bg-teal:10 rounded-3xl p6 transition duration-200>
+    <p>There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.</p>
+    <p><span v-mark.orange="5">Oh and weird concurrency bugs.</span></p>
+    <p><span v-mark.orange.delay500="5">Oh and weird concurrency bugs.</span></p>
+  </div>
+</div>
+</div>
+
+---
+glow: bottom
+---
+
+# Why reinvent the wheel?
+
+<div v-click op50>Just use <code>swr</code> and make your life <span text-2xl scale-110 text-green font-hand>easier!</span></div>
+
+<img v-after src="/swr-trend.png" mt8 />
+
+---
 glowHue: 25
 glowX: 50
 glowY: 50
@@ -465,17 +573,17 @@ title: Tailwind CSS
 <span op50>https://</span>tailwindcss.com
 </div>
 
-<div i-logos-tailwindcss-icon text-5em mt--10 />
-<h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em text-white>Rapidly build modern websites<br>without ever leaving your HTML.</h1>
+<div i-logos-tailwindcss-icon text-5em mt--10 mb8 />
+<h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em text-white>Utility-first<br><span text-cyan>CSS Framework</span></h1>
 <div v-click text-xl op75 text-center>
-"A utility-first CSS framework packed with classes like <code>flex</code>, <code>pt-4</code>, <code>text-center</code> and <code>rotate-90</code> that can be composed to build any design, directly in your markup."
+"Rapidly build modern websites without ever leaving your HTML."
 </div>
 
 ---
 
 # Utility-First Fundamentals
 
-<div v-click absolute transition-all duration-400 ease-in-out :class="$clicks <= 1 ? 'left-35% bottom-40%' : 'left-58% bottom-20%'">
+<div v-click absolute transition-all duration-400 ease-in-out :class="$clicks <= 1 ? 'left-35% bottom-40%' : 'left-58% bottom-25%'">
 <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
   <div class="shrink-0">
     <img class="size-12" src="/chitchat.svg" alt="ChitChat Logo">
@@ -554,15 +662,20 @@ title: Tailwind CSS
 </div>
 ```
 
+<div text-center font-hand mt-auto v-click="6" text-lime2 text-2xl rotate--5>You have to actually try it</div>
+<div flex="~ justify-center" v-click="4"><div v-mark.linethrough.lime.delay300="5">"This is an atrocity, what a horrible mess!"</div></div>
+
 </div>
 
 </div>
 
 ---
+glow: left
+---
 
 # Fundamentals
 
-<div grid="~ cols-[max-content_min-content_max-content] items-center gap-6" py8 px3>
+<div grid="~ cols-[max-content_min-content_max-content] items-center gap-6" w-120 mt8 py4 px4 rounded-2xl bg-teal:16>
   <div><code>display: flex;</code></div>
   <div i-ph-arrow-right-duotone op50 v-click />
   <div><code v-after>flex</code></div>
@@ -596,9 +709,133 @@ title: Tailwind CSS
 layout: quote
 ---
 
-"This is an atrocity, what a horrible mess!"
-<br>
 <div>"There are 2 hard problems in computer science: cache invalidation, <span v-mark.lime.box>naming things</span>, and off-by-1 errors."</div>
+
+---
+
+# Important Benefits
+
+<div op50>Once you’ve actually built something this way, you’ll quickly notice these:</div>
+
+<div flex="~ col gap1" mt12>
+
+<div v-click flex="~ gap-2 items-center">
+  <div i-emojione-zzz />
+  You aren’t wasting energy inventing class names
+</div>
+<div v-click op70 mb4 ml6>No more adding silly class names like <code>sidebar-inner-wrapper</code> just to be able to style something</div>
+<div v-click flex="~ gap-2 items-center">
+  <div i-openmoji-stop-sign />
+  Your CSS stops growing
+</div>
+<div v-click op70 mb4 ml6>With utilities, everything is reusable so you rarely need to write new CSS</div>
+<div v-click flex="~ gap-2 items-center">
+  <div i-ph-shield-check text-teal />
+  Making changes feel safer
+</div>
+<div v-click op70 mb4 ml6>Classes in your HTML are local, so you can change them without worrying about something else breaking</div>
+
+<div v-click mt8>
+"When you realize how productive you can be working exclusively in HTML with predefined utility classes, working any other way will feel like torture."
+</div>
+
+</div>
+
+---
+
+# Why not just use inline styles?
+
+<div op50>Using utility classes has a few important advantages over inline styles:</div>
+
+<div flex="~ col gap1" mt12>
+
+<div v-click flex="~ gap-2 items-center" text-red3>
+  <div i-ph-lock-bold />
+  Designing with constraints
+</div>
+<div v-click op70 mb4 ml6>Magic nunmber VS. Predefined design system</div>
+<div v-click flex="~ gap-2 items-center" text-teal>
+  <div i-mdi-responsive />
+  Responsive design
+</div>
+<div v-click op70 mb4 ml6>You can’t use media queries in inline styles</div>
+<div v-click flex="~ gap-2 items-center" text-lime3>
+  <div i-fluent-cursor-hover-16-regular />
+  Hover, focus, and other states
+</div>
+<div v-click op70 mb4 ml6>Inline styles can’t target states like hover or focus</div>
+
+</div>
+
+---
+
+# Tailwind CSS VS. Bootstrap
+
+<table>
+  <thead>
+    <tr>
+      <td></td>
+      <td><div flex gap-2 items-center><div i-logos-bootstrap />Bootstrap</div></td>
+      <td><div flex gap-2 items-center><div i-logos-tailwindcss-icon />Tailwind CSS</div></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Philosophy</td>
+      <td>Ready-made components</td>
+      <td>Utility-first customization</td>
+    </tr>
+    <tr>
+      <td>Customization</td>
+      <td>Limited</td>
+      <td>Extensive</td>
+    </tr>
+    <tr>
+      <td>Development Speed</td>
+      <td>Faster initial development</td>
+      <td>Slower, but more precise</td>
+    </tr>
+    <tr>
+      <td>Performance</td>
+      <td>Potentially heavier</td>
+      <td>Lightweight</td>
+    </tr>
+    <tr>
+      <td>Learning Curve</td>
+      <td>Smoother</td>
+      <td>Steeper</td>
+    </tr>
+    <tr>
+      <td>Browser support</td>
+      <td>Broad</td>
+      <td>Modern</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+glow: bottom
+---
+
+# State of CSS - Usage
+
+<img src="/state-of-css-usage.png" />
+
+<div mt4 text-center>
+Statistics from <a href="https://2023.stateofcss.com">stateofcss.com</a>
+</div>
+
+---
+glow: bottom
+---
+
+# State of CSS - Retention
+
+<img src="/state-of-css-retention.png" />
+
+<div mt4 text-center>
+Statistics from <a href="https://2023.stateofcss.com">stateofcss.com</a>
+</div>
 
 ---
 glowHue: 80
@@ -611,27 +848,114 @@ title: Zod
 </div>
 
 <div i-logos-zod text-5em mt--10 />
-<h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em text-white>Next Generation<br><span text-blue>Schema Validation</span></h1>
+<h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em text-white>TypeScript-first<br><span text-blue>Schema Validation</span></h1>
 <div v-click text-xl op75 text-center>
 "A TypeScript-first schema validation library with static type inference."
 </div>
 
 ---
-glowSeed: 10
-glowHue: 100
-class: flex flex-col items-center justify-center
-title: ESLint
+
+# Great Features
+
+<v-clicks flex="~ col gap4" mt8>
+
+- Zero dependencies
+- Works in Node.js and all modern browsers
+- Tiny: <span text-green>8kb</span> minified + zipped
+- Immutable: methods (e.g. `.optional()`) return a new instance
+- Concise, chainable interface
+- Functional approach: parse, don't validate
+- Works with plain JavaScript too! You don't need to use TypeScript.
+
+</v-clicks>
+
 ---
 
-<div text-center absolute left-1 right-1 transition-all duration-400 op75 ease-in-out :class="$clicks <= 0 ? 'scale-250 bottom-50%' : 'bottom-5'">
-<span op50>https://</span>eslint.org
+# Basic Usage
+
+<div grid="~ cols-2 gap4">
+  <div flex="~ col gap2">
+    <div>A simple string schema</div>
+
+```ts {*}{class:'!children:text-[8px]'}
+import { z } from 'zod'
+
+// creating a schema for strings
+const mySchema = z.string()
+
+// parsing
+mySchema.parse('tuna') // => "tuna"
+mySchema.parse(12) // => throws ZodError
+
+// "safe" parsing (doesn't throw error if validation fails)
+mySchema.safeParse('tuna') // => { success: true; data: "tuna" }
+mySchema.safeParse(12) // => { success: false; error: ZodError }
+```
+
+  </div>
+  <div flex="~ col gap2">
+    <div>A more complex object schema</div>
+
+```ts {*}{class:'!children:text-[8px]'}
+import { z } from 'zod'
+
+const userSchema = z.object({
+  email: z.string().email({ message: 'Invalid email address' }),
+  password: z.string()
+    .min(8, { message: 'Password must be at least 8 characters long' })
+    .max(16, { message: 'Password must be at most 16 characters long' })
+    .regex(/[A-Z]/, { message: 'Password must include at least one uppercase letter' })
+    .regex(/[a-z]/, { message: 'Password must include at least one lowercase letter' })
+    .regex(/\d/, { message: 'Password must include at least one number' })
+    .regex(/[@$!%*?&]/, { message: 'Password must include at least one special character' }),
+})
+```
+
+  </div>
 </div>
 
-<div i-logos-eslint text-5em mt--10 />
-<h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em text-white>Find and fix your problems<br><span text-hex-8080f2>in your JavaScript code</span></h1>
-<div v-click text-xl op75 text-center>
-"The pluggable linting utility for JavaScript and JSX"
-</div>
+---
+
+# Use with `react-hook-form`
+
+```tsx {*}{class:'!children:text-[10px]/1'}
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as z from 'zod'
+
+const schema = z.object({
+  name: z.string().min(1, { message: 'Required' }),
+  age: z.number().min(10),
+})
+
+function App() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(schema),
+  })
+
+  return (
+    <form onSubmit={handleSubmit(d => console.log(d))}>
+      <input {...register('name')} />
+      {errors.name?.message && <p>{errors.name?.message}</p>}
+      <input type="number" {...register('age', { valueAsNumber: true })} />
+      {errors.age?.message && <p>{errors.age?.message}</p>}
+      <input type="submit" />
+    </form>
+  )
+}
+```
+
+---
+glow: bottom
+---
+
+# Why zod?
+
+<img v-click src="/zod-trend.png" mt8 />
 
 ---
 class: flex flex-col items-center justify-center
@@ -648,13 +972,30 @@ title: Vitest
 "A Vite-native testing framework. It's fast!"
 </div>
 
-<!--
-Let's take some real world examples of how progressive works in our daily tools.
+---
 
-If you go to the official Vue documentation, vuejs.org. [click] You see the headline describe itself as the progressive JavaScript framework. And inside the docs, [click] there's a statements mention that Vue is a framework that can grow with you and adopt with your needs.
+# Why Vitest
 
-I have heard people saying that one of the main selling points of Vue is that Vue is very easy to learn and get started. And more than that, I also see Vue is awesome because it can be used in basically everywhere thanks to the progressive approach it takes.
--->
+<div flex="~ col gap6" mt8>
+
+<div v-click flex="~ col gap1">
+  <div flex="~ gap2 items-center"><div i-logos-vitejs /><span text-purple>Vite</span> Powered</div>
+  <div op50>Reuse Vite's config and plugins - consistent across your app and tests. Zero config if using Vite.</div>
+</div>
+<div v-click flex="~ col gap1">
+  <div flex="~ gap2 items-center"><div i-logos-jest /><span text-red4>Jest</span> Compatible</div>
+  <div op50>Expect, snapshot, coverage, and more - migrating from Jest is straightforward.</div>
+</div>
+<div v-click flex="~ col gap1">
+  <div flex="~ gap2 items-center"><div i-logos-vitejs />Smart & instant watch mode</div>
+  <div op50>Only rerun the related changes, just like HMR for tests!</div>
+</div>
+<div v-click flex="~ col gap1">
+  <div flex="~ gap2 items-center"><div i-logos-typescript-icon />ESM, TypeScript, JSX</div>
+  <div op50>Out-of-box ESM, TypeScript and JSX support powered by esbuild.</div>
+</div>
+
+</div>
 
 ---
 glowSeed: 10
@@ -667,157 +1008,11 @@ title: Slidev
 <span op50>https://</span>sli.dev
 </div>
 
-<div i-logos-slidev text-5em mt--10 />
+<img src="/slidev-logo.svg" w-5em mt--10 />
 <h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em text-white>Presentation Slides<br><span text-cyan>for Developers</span></h1>
 <div v-click text-xl op75 text-center>
 "A web-based slides maker and presenter.<br>It's designed for developers to focus on writing content in Markdown."
 </div>
-
----
-
-# Progressive on Integrations
-
-Vue offers multiple ways to use, for different level of integrations:
-
-<div pt3 />
-
-<v-clicks>
-
-- CDN without build tools
-
-- As Web Components
-- Single-page application (SPA)
-- Static site generation (SSG)
-- Server-side rendering (SSR)
-- Native targeting
-- Vue Vapor Mode <sup op50 italic font-serif>Coming soon</sup>
-
-</v-clicks>
-
-<!--
-Vue is progressive on integrations. Vue provides multiple builds and offers many ways to use in different scenarios.
-
-[click] Like you can use Vue with a single line of CDN import, and enhance your web apps even in a static HTML file without any build tools.
-
-[click] You can also use Vue components as Web components so that's it can coexist with the other frameworks. Vice versa you can also import web components within Vue applications.
-
-[click] When we have build tools set up, we can build Vue applications with Vue single file components that colocate necessary context inside a single file. To build interactive single page application with ease.
-
-[click] With tools like VitePress, it allows you to have efficient static side generation that ships minimal JavaScript while retains a great developer experience.
-
-[click] With tools like Nuxt, we could have server-side rendering with Vue to maximize the end-user experience as well as better SEO results.
-
-[click] Native targeting it also possible via Ionic or NativeScripts.
-
-[click] And then we have the upcoming Vapor mode, which allows components to opt-in a more performance VNode-less render engine to optimize even further in performance critcal scenarios.
--->
-
----
-layout: center
-class: text-center
-title: Levels of Integrations
----
-
-<h1 important-text-5xl>Levels of Integrations</h1>
-
-<h3 v-click text-white:50>Cover different scenarios, coexist with other techs, <span text-1.4em font-hand text-blue v-mark.highlight.delay400="{at:1,color:'#60a5fa20'}">easy to adopt</span></h3>
-
-<!--
-Vue's approach provides the progressive on the levels of integrations.
-
-Allows it to cover the needs for different scenarios, or even coexist with other technologies. [click] This means even you have a large codebase using other stacks but want to use Vue, you can still adopt some parts of you app to use Vue first, and gradually migrate each part slowly. As far as I know, for example, [Wikimedia also picked Vue](https://lists.wikimedia.org/hyperkitty/list/wikitech-l@lists.wikimedia.org/thread/SOZREBYR36PUNFZXMIUBVAIOQI4N7PDU/) and started enhancing with Vue.
-
-In the end, the goal is to make our tool easy to adapt for different levels of needs so we could serve a wilder range of the users.
--->
-
----
-glowX: 50
-glowY: 130
-class: flex flex-col items-center justify-center
-title: Nuxt
----
-
-<div text-center absolute left-1 right-1 transition-all duration-400 op75 ease-in-out :class="$clicks === 0 ? 'scale-250 bottom-50%' : 'bottom-5'">
-<span op50>https://</span>nuxt.com
-</div>
-
-<div i-logos-nuxt-icon text-5em mt--10 />
-<h1 v-click forward:delay-400 text-center important-text-5xl font-800 important-leading-1.1em>The Intuitive<br><span text-hex-00dc82>Vue Framework</span></h1>
-<div v-click text-xl op75>
-"To make web development intuitive and performant with a great Developer Experience"
-</div>
-
-<!--
-And then, let's talk about Nuxt.
-
-If we go to nuxt.com, [click] we will see it's titled as "The Intuitive Vue Framework". And in the docs, it mentions [click] Nuxt's goal is "To make web development intuitive and performant with a great Developer Experience".
-
-And that brings us to the next section, "Progressive on Onboarding".
--->
-
----
-glow: bottom
----
-
-# Progressive on Onboarding
-
-<div v-click text-white:50 mt5>
-This is <b text-white:75>all you need</b> to start with Nuxt:
-</div>
-
-<div grid="~ cols-2 gap-x-2" mt5>
-<div flex="~ gap-2 items-center" v-click="2">
-  <div i-logos-npm-icon />
-  package.json
-</div>
-<div flex="~ gap-2 items-center" v-click="3">
-  <div i-logos-vue />
-  app.vue
-</div>
-
-<div v-click="2">
-
-```json
-{
-  "scripts": {
-    "dev": "nuxt dev",
-    "build": "nuxt build"
-  },
-  "devDependencies": {
-    "nuxt": "^3.10.0"
-  }
-}
-```
-
-</div>
-<div v-click="3">
-
-```vue
-<script setup>
-const msg = ref('Hello, Nuxt!')
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-</template>
-```
-
-</div>
-</div>
-
-<div mt10>
-<span text-2xl v-click="4">Intuitive</span> <span op50 v-click="5"> - Minimal knowledge required, and easy to discover new features</span>
-</div>
-
-<!--
-If you have ever tried Nuxt's starter template - you will find it's surprisingly easy to start a Nuxt app. [click]
-
-All you need is to have `nuxt` installed as your dev dependencies [click], and create a simple Vue component file as `app.vue`. [click]
-
-And that's it, that's all you need to get start with Nuxt. Even to someone who never tried Vue or Nuxt, it's probably not hard to tell what this will render, or how to modify it, as long as they get the basic idea of what is HTML.
-
-[click] I think Nuxt's "Intuitive" here [click] means that you can get started with very minimal knowledge. While also, it should be fairly easy to enable more features as needed.
--->
 
 ---
 
@@ -827,450 +1022,44 @@ And that's it, that's all you need to get start with Nuxt. Even to someone who n
 Starts <b text-white:75 font-bold>minimal</b> and <b text-white:75 font-bold>grows</b> with users:
 </div>
 
-<!--
-<div v-click mt-20 mb-4 op75>
-By the minimal starting interface, Nuxt allows you to start with a minimal setup and grow with the features you need.
-</div>
-
-<div flex="~ gap-4" text-white:75>
-<v-clicks>
-
-  <div flex="~ gap-1 items-center">
-    <div i-ph-circle-wavy-check-duotone text-xl text-lime />
-    Server-side Rendering
-  </div>
-
-  <div flex="~ gap-1 items-center">
-    <div i-ph-circle-wavy-check-duotone text-xl text-lime />
-    Deploys Everywhere
-  </div>
-
-  <div flex="~ gap-1 items-center">
-    <div i-ph-circle-wavy-check-duotone text-xl text-lime />
-    Ecosystem of Nuxt / Vue / Vite
-  </div>
-
-  <div flex="~ gap-1 items-center">
-    <div i-ph-circle-wavy-check-duotone text-xl text-lime />
-    Serverless APIs
-  </div>
-
-</v-clicks>
-</div>
--->
-
 <div flex="~ col gap-6">
 
 <div flex="~ gap-2 items-center">
-  <div flex="~ gap-2 items-center" v-click>
-    <div i-ph-circles-three-plus-duotone text-2xl />
-    <span font-bold>Have some components?</span>
-  </div>
-  <span v-click op75 ml4>Put them in <code>components/</code> and use anywhere</span>
+  <span v-click font-bold>📝 Markdown-based</span>
+  <span v-click op75 ml4>Start with a super simple markdown file and focus on the content</span>
 </div>
 
 <div flex="~ gap-2 items-center">
-  <div flex="~ gap-2 items-center" v-click>
-    <div i-ph-signpost-duotone text-2xl />
-    <span font-bold>Need routing?</span>
-  </div>
-  <span v-click op75 ml4>Create a <code>pages/</code> directory and Vue router is set up for you.</span>
+  <span v-click font-bold>🧑‍💻 Developer Friendly</span>
+  <span v-click op75 ml4>Shiki, Magic Move and TwoSlash make Slidev the best choice for tech talks</span>
 </div>
 
 <div flex="~ gap-2 items-center">
-  <div flex="~ gap-2 items-center" v-click>
-    <div i-ph-cloud-arrow-up-duotone text-2xl />
-    <span font-bold>Deploy your site?</span>
-  </div>
-  <span v-click op75 ml4 flex="~ items-center gap1">It <span text-green>Just works™</span> with zero-config powered by <img src="/nitro.svg" h-1.3em /><span text-purple>Nitro</span></span>
+  <span v-click font-bold>🎨 Themable</span>
+  <span v-click op75 ml4 flex="~ items-center gap1">Check out the theme gallery and apply your favorite within one line of code</span>
 </div>
 
 <div flex="~ gap-2 items-center">
-  <div flex="~ gap-2 items-center" v-click>
-    <div i-ph-cloud-duotone text-2xl />
-    <span font-bold>Need some server logic?</span>
-  </div>
-  <span v-click op75 ml4>Create a <code>server/api/</code> directory to make serverless endpoints.</span>
+  <span v-click font-bold>⚡ Fast</span>
+  <span v-click op75 ml4>Every change you make in the editor instantly sync to your slides in the browser</span>
 </div>
 
 <div flex="~ gap-2 items-center">
-  <div flex="~ gap-2 items-center" v-click>
-    <div i-ph-file-ts-duotone text-2xl />
-    <span font-bold>Want TypeScript?</span>
-  </div>
-  <span v-click op75 ml4>Oh, you can just use it!</span>
+  <span v-click font-bold>🤹 Interactive & Expressive</span>
+  <span v-click op75 ml4>Vue components and Monaco Editor get you covered</span>
 </div>
 
 <div flex="~ gap-2 items-center">
-  <div flex="~ gap-2 items-center" v-click>
-    <div i-ph-puzzle-piece-duotone text-2xl />
-    <span font-bold>PWA, SEO, i18n, RSS, etc?</span>
-  </div>
-  <span v-click op75 ml4>We have great modules ecosystem to use in a few clicks.</span>
+  <span v-click font-bold>📤 Portable</span>
+  <span v-click op75 ml4 flex="~ items-center gap1">You can export your slides into PDF, PPTX, PNGs, or even deploy it as SPA</span>
 </div>
 
 <div flex="~ gap-2 items-center">
-  <div flex="~ gap-2 items-center" v-click>
-    <div i-ph-cat-duotone text-2xl />
-    <span font-bold>Curious about more?</span>
-  </div>
-  <span v-click op75 ml4 flex="~ items-center gap1">We have <div i-logos-nuxt-icon text-xl inline-block/><span text-green>Nuxt DevTools</span> to inspect and analyze the internals</span>
+  <span v-click font-bold>🛠 Hackable</span>
+  <span v-click op75 ml4 flex="~ items-center gap1">Everything that can be done in a normal web app can be applied to your slides</span>
 </div>
 
 </div>
-
-<!--
-Then let's talk about one other aspect that Nuxt is good at - Progressive on features.
-
-So we know that Nuxt works with a bare minimal starter, be also we know a real-world application won't be that simple. We need a lot capability to accomplish various needs, and also a way for us to organize the codebase in an managable way.
-
-[click] Nuxt is the framework that can grows with your need!
-
-[click] To say, if you want to some components to separate and reuse your logic, [click] in Nuxt you can just create components files under the components directory, and they will be auto-discoverabale across your project.
-
-[click] And then if you our app needs the capability to serve multiple pages and do the navigations, [click] you can create the `pages/` directory. The components under it will be register automatically to your router based on their filename. One of the other great part is that until you do this, `vue-router` or related code were never ships to your production app before you actually using it.
-
-[click] Say our app is now ready to go, we want to deploy the site to somewhere. There are quite many deploy platform you can choose from, and usually you will need to learn a bit how to deploy X framework on Y platform, etc. [click] But with Nuxt, they will just works on all major hosting services with zero config, thanks for the automatic deploy presets powered by Nitro.
-
-[click] It's common for an web app to have some server logics and API end points. [click] In Nuxt you can simply create function modules under `server/api` directory, witha a very similar convention like the pages for routing. Nitro will deploy them in the serverless functions based on your hosting services and we have the end-to-end type safety on developement.
-
-[click] Talking about type safety, if later you learned TypeScript and want to use it with in Nuxt - [click] no problem, you can directly use them as Nuxt already understand it.
-
-[click] For more features like Progressive Web Apps, Search engine optimization, internationallizations, etc. [click] Nuxt provides a rich module ecosystem that you can integrate them within a few clicks.
-
-[click] And finally, in case you are interested in more features Nuxt provides, [click] we also built Nuxt DevTools for you to inspect the internals or analyze your apps.
-
-All those features are opt-in, meaning that if you don't need a certain feature, you don't even need to learn it. And once you find it useful later, you can always grab it back easily.
--->
-
----
-class: grid grid-cols-[auto_640px] gap-4 items-center justify-center
-glow: left
----
-
-<div flex="~ col gap-4">
-<div text-4xl>Nuxt DevTools</div>
-<div op50 v-click>Help features discovery<br>and understanding</div>
-</div>
-
-![](/nuxt-devtools.png){.my--10}
-
-<!--
-To help with the features discovery, we made Nuxt DevTools as we just mentioned.
-
-For example, DevTools provides a modules tab, that you can have a quick overview of how many modules you have installed, with links to their documentations or the source code repo. It also offers you a nice UI for you to search through all the modules across the community, and you can ask DevTools to automatically download them and install for you with a single click.
-
-[click] DevTools is built to help features discovery and understanding, to assist you crafting even more awesome applications.
--->
-
----
-class: grid grid-cols-[640px_auto] gap-6 items-center justify-center
-glow: right
----
-
-![](/nuxt-tutorial.png){.my--10}
-
-<div flex="~ col gap-4" text-right>
-<div text-4xl>Nuxt Tutorial</div>
-<div op50 v-click>Help onboarding<br>and learning</div>
-</div>
-
-<!--
-On top of the documentation site Nuxt has, in the past months we started to build an interactive tutorial playground. Some of you here probably have watched my live streaming on building it, thank you for working together with me btw.
-
-So Nuxt Tutorial allows beginners to have a more linear, step-by-step learning experience. So they can start playing with Nuxt more easier without the need to install or setup.
-
-[click] This is another case that we are trying to get the progressive onboard experience even smoother.
--->
-
----
-layout: center
-class: text-center
----
-
-<h1 important-text-5xl>Grow with Users</h1>
-
-<h3 v-click><span op50>Expose concepts & powers </span><span text-lime font-hand text-4xl v-mark.underline.lime.delay400="1">progressively</span></h3>
-
-<!--
-In short, the point here is that we should grow with users and not putting too much stuff upfront at one.
-
-[click] Make learning easier to starts with, and expose new concpets and powers progressively along the way.
--->
-
----
-glowHue: 100
-class: flex flex-col items-center justify-center
----
-
-<div text-center absolute left-1 right-1 transition-all duration-400 op75 ease-in-out :class="$clicks === 0 ? 'scale-250 bottom-50%' : 'bottom-5'">
-<span op50>https://</span>vitejs.dev
-</div>
-
-<div i-logos-vitejs text-5em mt--10 mb2 />
-<h1 v-click forward:delay-400 text-center important-text-5xl font-800 important-leading-1.1em>Next Generation<br><span text-purple>Frontend Tooling</span></h1>
-<div v-click text-lg op75>
-"A build tool that aims to provide a faster and leaner development experience for modern web projects."
-</div>
-
-<!--
-And then, let's take one more example, Vite.
-
-[click] Vite titled itself as the next generation frontend tooling. I am prettry sure no one would question that.
-
-[click] In the "Vite philosophy" section, the docs mentions that "Vite works closely with projects in the ecosystem to minimize regressions on each release".
-
-Vite is on major version 5 right now. And during the past 4 years, we basically keep the pace of release 1 major version per year to keep up the JavaScript ecosystem and the evolving standards.
-
-Some of you probably have been through that periods where we do major releases. The last one with Vite 5 and was released on November last year.
-
-It's not a secret that Vite's major releases have very smooth migration paths. We received many comments mentions about their successful migrations cases.
--->
-
----
-glowHue: 90
-glow: top-right
-class: flex items-center justify-center
----
-
-<div relative>
-  <Tweet id="1547266714466861056" ml--45 mt--4 flex justify-center items-center transition class="important:[&_iframe]:w-230 important:[&_iframe]:rounded-13px" :class="$clicks > 1 ? 'op50 duration-600' : ''" v-click />
-
-  <Tweet id="1725177397949944126" absolute top-15 left-5 class="important:[&_iframe]:w-200 important:[&_iframe]:rounded-13px important:[&_iframe]:shadow-xl" v-click />
-</div>
-
-<!--
-[click] Project monorepo mention that they upgraded Vite 2 to Vite 3 with only bumpping version, everything keeps working as-is.
-
-[click] Kilian even describe Vite as the "Most painless full-version upgrade of a build system ever" on the release of Vite 5.
-
-And many more comments like this. Thank you and we are glad to hear those stories.
--->
-
----
-glowHue: 60
-glow: right
-class: flex flex-col items-start justify-center
----
-
-## A Typical Vite Plugin
-
-<div mt5 v-click>
-<div flex="~ gap-2 items-center">
-  <div i-logos-npm-icon />
-  package.json
-</div>
-
-```json
-{
-  // ...
-  "peerDependencies": {
-    "vite": "^2.9.0 || ^3.0.0 || ^4.0.0 || ^5.0.0"
-  }
-}
-```
-
-</div>
-
-<div mt4 relative>
-<span v-click>The plugin keeps working from <span v-mark.underline.purple="3">Vite 2 to Vite 5</span></span>
-<img src="/vite-3years.png" absolute left-65 top-10 rotate-10 w-33 alt="3 years in between" v-click />
-</div>
-
-<!--
-If you look into the Vite plugins you are using, you will find many of their `package.json` follow a similar pattern like this:
-
-[click] Vite appears in the `peerDependencies`  with the version range from Vite 5 all the way down to Vite 2.
-
-[click] This means that the plugin keeps working from Vite 2 to Vite 5 perfectly without the need to even drop support of the previous Vite versions.
-
-[click] Not to mention there is 3 years of time in between, for such an active tool like Vite.
-
-Vite team has put a lot of care in it to make this possible. We care a lot about every changes we made, that we even work out the idea of "Ecosystem CI" that runs the test of major downstream frameworks on almost every pull requests to make sure they has the minimal impact to the ecosystem. This practice has been later adopted to Vue, Nuxt and many other frameworks.
-
-And that brings up one other aspect of progressive.
--->
-
----
-glow: right
----
-
-# Progressive on Breaking Changes
-
-<p v-click="3">Two ways of make breaking changes easier</p>
-
-<div absolute left-29 top-35 w-80 transition duration-800 v-click="1" :class="$clicks <= 3 ? 'translate-x-50 translate-y-10 scale-150' : '' ">
-  <img src="/breaking-changes-floors.png" absolute inset-0 op75>
-  <div font-hand absolute left-0 top-39 text-2xl>v1.0</div>
-  <div font-hand absolute left-23 top-12 text-2xl v-click="7" text-yellow>v1.x</div>
-  <div font-hand absolute right-0 top--6 text-2xl transition duration-800 :class="$clicks >= 10 ? 'translate-x--22 translate-y-25 text-blue' : ''">v2.0</div>
-  <div font-hand absolute right-0 top--6 text-2xl text-orange v-click="10">v3.0</div>
-  <img src="/breaking-changes-stairs-right.png" absolute inset-0 v-click="3">
-  <img src="/breaking-changes-stairs-left.png" absolute inset-0 v-click="2">
-</div>
-
-<div absolute left-15 bottom-10 transition duration-800 :class="$clicks <= 3 ? 'translate-x-20 translate-y--13  scale-120' : '' ">
-<div flex="~ gap-2 items-center" text-yellow3 mt-8 mb2 text-xl v-click="2">
-  <div i-ph-escalator-down-duotone text-2xl scale-x--100 />
-  <span>Forward Compatibility</span>
-</div>
-
-<v-clicks at="5">
-
-- Compatible with the [future]{.text-yellow.font-bold} versions
-- Introduce the `experimental` or `future` flags
-- Make future behavior opt-in today
-- (e.g. `@vue/composition-api`, `vue v2.7`, [Nuxt Bridge](https://github.com/nuxt/bridge))
-
-</v-clicks>
-</div>
-
-<div absolute left-120 top-30 transition duration-800 :class="$clicks <= 3 ? 'translate-x-35 translate-y-35 scale-120' : '' ">
-<div flex="~ gap-2 items-center" text-blue mt-8 mb2 text-xl v-click="3">
-  <div i-ph-escalator-up-duotone text-2xl />
-  <span>Backward Compatibility</span>
-</div>
-
-<v-clicks at="9">
-
-- Compatible with the [previous]{.text-blue.font-bold} versions
-- Deprecate first, print warnings, remove later
-- (e.g. `@vue/compat`, `@nuxt/kit`)
-
-</v-clicks>
-</div>
-
-<!--
-Progressive on Breaking Changes.
-
-I guess probably no one likes breaking changes. But somehow breaking changes are also quite important for the codebase to stay healthy and more maintainable in the long run. It help us to fix imperfectness of our previous design, with a better context we have today. While it's had to avoid introducing them, I believe maybe there would be some ways to make it the transition smoother and easier for the users to adopt.
-
-[click] Taking the experience we had in Vue and Vite, I see there are two major ways to achieve that. Here we bring back the graph we had before, refering to the jump between major versions 1 and 2.
-
-[click] One way of make breaking changes progressively is to do Forward Compatibility, [click] and the other is Backward Compatibility. Let me explain. [click]
-
-[click] Forward Compatibility is about to compatible with versions in the future, like to say if you know what's the new features you going to have in the next breaking change, you bring the features back to the current version in a non-breaking way.
-
-[click] In practice, often we will introduce flags such as `experimental` or `future` for users [click] to explicitly opt-in those changes if they want to try the new stuff, while the mainstream of the users can still be on the current version without breakages.
-
-[click] In Vue, we have the example of `@vue/composition-api` plugin back in Vue 2, which provide the capability of using Vue 3's composition API for Vue 2 apps before they can migrate to Vue 3.
-
-And later we have Vue v2.7, 2 years after Vue 3.0 has released, to have composition API support bake in, and align more with Vue 3's behaviour and feature sets.
-
-For Nuxt, we introduced Nuxt Bridge, to briging the changes betwen Nuxt 2 and 3.
-
-[click] Then it's take about Backforward compatibility, which you might heard this more often. It's about to be compactible with the previous versions.
-
-[click] A common practice is that we will mark a certain feature as deprecated, that will print warnings upon usage. And eventually removed later in the next major version or so. This also means it's better to do smaller and a bit more frequent major releases to make the migration easier.
-
-[click] Talking about examples, in Vue we have the compatibility build, that use Vue 3 as the fundation but with additional flags to simulate the legacy Vue 2 behaviour. That you can migrate once a feature. On Nuxt we have Nuxt Kit that allows module aurthor to build modules that would in both Nuxt 2, Bridge and Nuxt 3. etc.
--->
-
----
-layout: center
-class: text-center
-glowX: 50
-glowY: 0
----
-
-<h1 important-text-5xl>Allow Coexistence</h1>
-
-<h3 v-click text-white:50>Provide <span text-orange v-mark.underline.orange.delay400.op75="1">"middle stages"</span> for migration, coexist of legacy & new</h3>
-
-<!--
-From my understand, I think the progressive of breaking changes is fundamentally allowing the co-existence.
-
-[click] When we make changes, we should provide the "middle stages" for ppl to take a rest on migration, allowing the coexistence of both legacy and new. So the work can be done progressively, and reduce the chance of breakages.
--->
-
----
-glow: right
----
-
-<!--
-
-# Extensible Plugins System
-
-- Allows community to progressively enhance the tool and enrich the ecosystem -->
-
-# Recap
-
-<div flex="~ col gap-1" pt6>
-
-<div text-xl text-white:50 v-click>
-Progressive on <span flex="inline gap-1 items-center" text-lime translate-y-0.6><div i-ph-book-bookmark-duotone />Onboarding</span>
-</div>
-<div flex="~ gap-2 items-center" mb3 ml37 v-click>
-  <div i-ph-arrow-bend-down-right-duotone op50 />
-  <div>
-    Making it easy to understand and get started
-  </div>
-</div>
-
-<div text-xl text-white:50 v-click>
-Progressive on <span flex="inline gap-1 items-center" text-purple translate-y-0.6><div i-ph-puzzle-piece-duotone />Integrations</span>
-</div>
-<div flex="~ gap-2 items-center" mb3 ml37 v-click>
-  <div i-ph-arrow-bend-down-right-duotone op50 />
-  <div>
-    Fits in different scenarios, easy to adopt
-  </div>
-</div>
-
-<div text-xl text-white:50 v-click>
-Progressive on <span flex="inline gap-1 items-center" text-yellow translate-y-0.6><div i-ph-lightbulb-filament-duotone />Features</span>
-</div>
-<div flex="~ gap-2 items-center" mb3 ml37 v-click>
-  <div i-ph-arrow-bend-down-right-duotone op50 />
-  <div>
-    Starts minimal and grows with users
-  </div>
-</div>
-
-<div text-xl text-white:50 v-click>
-Progressive on <span flex="inline gap-1 items-center" text-rose translate-y-0.6><div i-ph-warning-octagon-duotone />Breaking Changes</span>
-</div>
-<div flex="~ gap-2 items-center" mb3 ml37 v-click>
-  <div i-ph-arrow-bend-down-right-duotone op50 />
-  <div>
-    Provide middle stages for migration
-  </div>
-</div>
-
-</div>
-
-<!--
-So, to recap today's topic, we have talked the progressiveness on different aspects of building a tool.
-
-[click] The first is about progressive on onboarding, [click] we should make the tool easy to learn and understand, for more people to start benefited from the tool we build.
-
-[click] And then we talked about the progressive on integration [click] for our tool to cover different scenarios, and easy to adopt.
-
-[click] Then we have the progressive on features, it's pretty common that we want to make our very powerful but that could be overhelming for the users to starts with. [click] So, taking the progressive approach would allows us to start minimal and grow with the users.
-
-[click] And then finally, we have progressive on breaking changes, [click] to provide middle stages to make migrations step by step.
--->
-
----
-layout: center
-class: text-center
-glowX: 50
-glowY: 0
----
-
-<h1 important-text-5xl>Progressive Paths</h1>
-
-<h3 v-click text-white:50>Enables users the capability of <span text-lime font-bold v-mark.highlight.lime.op5.delay200="1" inline-block p3 mx--2>"Divide and Conquer"</span></h3>
-
-<!--
-There are much more aspects of progressiveness that we didn't have time to talk about today, but my goal today is to bring this idea of "Progressive Path" to you.
-
-It might not seems to be a very cool or unusual stuff that people would get excited about, but I think it is playing a very important role to our daily software development. And we should think about it more often when building stuff, not only for open source projects, but also probably also for your products, or the ways of doing stuff in general.
-
-[click] To finish my talk with one sentence, I'd say "To provide the progressive paths, is to enable users the capability of 'Divide and Conquer' towards the goals they have".
-
-I hope you enjoy and find it useful.
--->
 
 ---
 layout: intro
@@ -1281,7 +1070,7 @@ glowY: 120
 
 # Thank you!
 
-Slides on [antfu.me](https://antfu.me)
+Slides also deployed on [Vercel](https://cutting-edge-frontend.vercel.app)
 
 <!--
 That's all for my talk, thank you, and happy hacking!
