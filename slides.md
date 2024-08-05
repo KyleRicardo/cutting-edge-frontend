@@ -562,6 +562,272 @@ glow: bottom
 <img v-after src="/swr-trend.png" mt8 />
 
 ---
+
+# Basic Usage: Combine ky and swr
+
+<div grid="~ cols-2 gap4">
+
+<div flex="~ col gap4">
+
+```tsx {*|5-6}
+// src/api/index.ts
+import ky from 'ky'
+import type { Product } from '~/types'
+
+export const fetchProductList
+                = ky.get('/products').json<Product[]>()
+```
+
+<div v-click="3">
+
+```tsx
+const { data, error, isLoading, mutate }
+= useSWR('/products', ky.get('/products').json<Product[]>())
+```
+
+</div>
+
+</div>
+
+```tsx {*|6-7}
+// src/App.tsx
+import useSWR from 'swr'
+import { fetchProductList } from '~/api'
+
+export default function App() {
+  const { data, error, isLoading, mutate }
+          = useSWR('/products', fetchProductList)
+
+  if (error)
+    return <div>failed to load</div>
+  if (isLoading)
+    return <div>loading...</div>
+
+  // render data
+  return (
+    <div>
+      {data.length > 0 && data.map(product => (
+        <div key={product.id}>{product.name}</div>
+      ))}
+      <button onClick={mutate}>Refresh</button>
+    </div>
+  )
+}
+```
+
+</div>
+
+---
+glowHue: 235
+glowX: 50
+glowY: 50
+class: flex flex-col items-center justify-center
+title: Zustand
+---
+
+<div text-center absolute left-1 right-1 transition-all duration-400 op75 ease-in-out :class="$clicks <= 0 ? 'scale-250 bottom-50%' : 'bottom-5'">
+<span op50>https://</span>docs.pmnd.rs/zustand
+</div>
+
+<div i-noto-bear text-5em mt--10 mb8 />
+<h1 v-click forward:delay-400 text-transparent text-center important-text-5xl font-800 important-leading-1.2em text-white>Unopinionated Lightweight<br><span text-amber7>State Management</span></h1>
+<div v-click text-xl op75 text-center>
+"A small, fast, and scalable bearbones state management solution."
+</div>
+
+---
+
+# A super simple store
+
+<div mb2>Your store is a <span v-mark.box.green.op50>hook!</span> You can put anything in it: primitives, objects, functions.</div>
+
+<div w-140>
+
+```ts {*|4|5-7|*}
+import { create } from 'zustand'
+
+const useStore = create(set => ({
+  bears: 0,
+  increasePopulation: () => set(state => ({ bears: state.bears + 1 })),
+  removeAllBears: () => set({ bears: 0 }),
+  updateBears: newBears => set({ bears: newBears }),
+}))
+```
+
+</div>
+
+<div my2>You can use the hook anywhere, without the need of providers.</div>
+
+<div w-140>
+
+```tsx {*|2|7|*}
+function BearCounter() {
+  const bears = useStore(state => state.bears)
+  return <h1>{bears}</h1>
+}
+
+function Controls() {
+  const increasePopulation = useStore(state => state.increasePopulation)
+  return <button onClick={increasePopulation}>one up</button>
+}
+```
+
+</div>
+
+---
+
+# Compare to Redux
+
+<div grid="~ cols-2 gap4">
+
+<div flex="~ col gap2">
+<div>Redux</div>
+
+```tsx {*}{class:'!children:text-[8px]/1'}
+import { createStore } from 'redux'
+import { useDispatch, useSelector } from 'react-redux'
+
+interface State {
+  count: number
+}
+
+interface Action {
+  type: 'increment' | 'decrement'
+  qty: number
+}
+
+function countReducer(state: State, action: Action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + action.qty }
+    case 'decrement':
+      return { count: state.count - action.qty }
+    default:
+      return state
+  }
+}
+
+const countStore = createStore(countReducer)
+
+function Component() {
+  const count = useSelector(state => state.count)
+  const dispatch = useDispatch()
+  // ...
+}
+```
+
+</div>
+
+<div flex="~ col gap2">
+<div>Zustand</div>
+
+```tsx {*}{class:'!children:text-[9px]/1'}
+import { create } from 'zustand'
+
+interface State {
+  count: number
+}
+
+interface Actions {
+  increment: (qty: number) => void
+  decrement: (qty: number) => void
+}
+
+const useCountStore = create<State & Actions>(set => ({
+  count: 0,
+  increment: (qty: number) => set(state => ({ count: state.count + qty })),
+  decrement: (qty: number) => set(state => ({ count: state.count - qty })),
+}))
+
+function Component() {
+  const count = useCountStore(state => state.count)
+  const increment = useCountStore(state => state.increment)
+  const decrement = useCountStore(state => state.decrement)
+  // ...
+}
+```
+
+</div>
+</div>
+
+---
+
+# Brother libraries
+
+All authored by Dai Shi (pmndrs)
+
+<div grid="~ cols-3 gap2">
+
+<div flex="~ col">
+<div mb2 flex>Zustand<div v-click="7" ml4 font-hand text-teal rotate--5 scale-120>German</div></div>
+
+```ts {*}{class:'!children:text-[9px]/1'}
+import { create } from 'zustand'
+
+interface State {
+  obj: { count: number }
+}
+
+const store = create<State>(
+  () => ({ obj: { count: 0 } })
+)
+
+store.setState(
+  prev => ({ obj: { count: prev.obj.count + 1 } })
+)
+```
+
+<div mt2 flex="~ col gap1 items-center">
+<div v-click>More like Redux or Pinia</div>
+<div v-click>A store makes of states & actions</div>
+</div>
+
+</div>
+
+<div flex="~ col">
+<div mb2 flex>Jotai <span v-click="8" ml4 font-hand text-teal rotate--5 scale-120>Japanese</span></div>
+
+```ts {*}{class:'!children:text-[9px]/1'}
+import { atom, useAtom } from 'jotai'
+
+const countAtom = atom<number>(0)
+
+function Component() {
+  const [count, updateCount] = useAtom(countAtom)
+  updateCount(count => count + 1)
+}
+```
+
+<div mt2 flex="~ col gap1 items-center">
+<div v-click>"Global" version of <code>useState</code></div>
+<div v-click>Atomic approach</div>
+</div>
+
+</div>
+
+<div flex="~ col">
+<div mb2 flex>Valtio <span v-click="9" ml4 font-hand text-teal rotate--5 scale-120>Finnish</span></div>
+
+```ts {*}{class:'!children:text-[10px]/1'}
+import { proxy } from 'valtio'
+
+const state = proxy({ obj: { count: 0 } })
+
+state.obj.count += 1
+```
+
+<div mt2 flex="~ col gap1 items-center">
+<div v-click>Minimal API yet magical</div>
+<div v-click>Proxy state made simple</div>
+</div>
+
+</div>
+
+</div>
+
+<div mt10 v-click="10">You can choose whichever you like, all better than Redux.</div>
+
+---
 glowHue: 25
 glowX: 50
 glowY: 50
