@@ -773,15 +773,16 @@ glow: left
 
 </v-clicks>
 
-<div flex="~ col gap6">
+<div flex="~ col gap4">
   <div v-click="3" bg-teal:10 rounded-3xl p6 transition duration-200>
-    <p>There are two hard things in computer science: <span v-mark.teal.box.delay300="3">cache invalidation</span>, naming things, and off-by-one errors.</p>
+    <div>There are two hard things in computer science: <span v-mark.teal.box.delay300="3">cache invalidation</span>, naming things, and off-by-one errors.</div>
   </div>
   <div v-click="5" bg-teal:10 rounded-3xl p6 transition duration-200>
-    <p>There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.</p>
-    <p><span v-mark.orange="5">Oh and weird concurrency bugs.</span></p>
-    <p><span v-mark.orange.delay500="5">Oh and weird concurrency bugs.</span></p>
+    <div>There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.</div>
+    <div><span v-mark.orange="5">Oh and weird concurrency bugs.</span></div>
+    <div><span v-mark.orange.delay500="5">Oh and weird concurrency bugs.</span></div>
   </div>
+  <div v-click ml-auto op50>Checkout more on <a href="https://blog.skk.moe/post/why-you-should-not-fetch-data-directly-in-use-effect/">Sukka's blog</a></div>
 </div>
 </div>
 
@@ -807,6 +808,8 @@ glow: left
 [Click]数据更改和乐观更新：用户提交输入时先更新本地 UI、形成「已经修改成功」的假象，同时异步将输入发送给服务端；如果出错，还需要回滚本地 UI
 
 [Click]中间件：日志、错误上报、Authentication
+
+[Click]文章来源是苏卡的博客，可以到他的博客上去看看更详细的解析。
 -->
 
 ---
@@ -1909,6 +1912,63 @@ Starts <b text-white:75 font-bold>minimal</b> and <b text-white:75 font-bold>gro
 
 动手尝试胜过千言万语。精通前端的小伙伴们可以在此大展身手，后端小伙伴也可以使用基本的Markdown语法构建简洁美观的幻灯片。为什么不试试呢？
 -->
+
+---
+glowHue: 80
+title: Recap
+layout: full
+---
+
+<div flex="~ col gap2" h-full>
+  <div grid="~ cols-3 gap2" flex="basis-3/5">
+    <div p4 bg-purple:20 rounded-2xl flex="~ col gap4 justify-center items-center">
+      <div text-8xl i-logos-vitejs />
+      <div text-4xl font-bold class="bg-[linear-gradient(330deg,#bd34fe_30%,#41d1ff)]" bg-clip-text text-transparent inline-block>Vite</div>
+      <div font-bold text-2xl text-center>Next Generation<br>Frontend Tooling</div>
+    </div>
+    <div flex="~ col gap2">
+      <div p4 bg-white:10 rounded-2xl flex="~ col gap4 justify-center items-center basis-2/3">
+      <div text-xl i-logos-swr invert />
+      <div text-4xl>SWR</div>
+      <div font-bold text-xl text-center op80>React Hooks<br>for Data Fetching</div>
+    </div>
+      <div font-hand text-center text-3xl font-bold rounded-2xl bg-sky:20 flex="~ col justify-center items-center basis-1/3"><div bg-gradient-to-br from-cyan to-blue bg-clip-text text-transparent inline-block>Cutting Edge<br>Frontend Technologies</div></div>
+    </div>
+    <div flex="~ col gap2">
+      <div bg-rose:20 px8 rounded-2xl flex-1 flex="~ gap6 items-center basis-1/3">
+        <img h-18 src="/ky-logo-white.svg" />
+        <div text-4xl font-bold class="bg-[linear-gradient(120deg,#ffccca_30%,#f1423d)]" bg-clip-text text-transparent inline-block>ky</div>
+      </div>
+      <div p4 bg-amber6:20 rounded-2xl flex="~ col gap4 justify-center items-center basis-2/3">
+      <div text-4xl i-noto-bear />
+      <div text-3xl font-bold text-yellow7>Zustand</div>
+      <div font-bold text-xl text-center op80>Unopinionated Lightweight<br>State Management</div>
+    </div>
+    </div>
+  </div>
+  <div grid="~ cols-3 gap2" flex="basis-2/5">
+    <div flex="~ col gap2">
+      <div bg-lime:10 px4 rounded-2xl flex-1 flex="~ gap6 justify-center items-center">
+        <div text-6xl i-logos-vitest />
+        <div text-4xl font-bold class="bg-[linear-gradient(330deg,#86b91a_30%,#edd532)]" bg-clip-text text-transparent inline-block>Vitest</div>
+      </div>
+      <div bg-sky:20 px4 rounded-2xl flex-1 flex="~ gap6 justify-center items-center">
+        <img h-14 src="/slidev-logo.svg" />
+        <div text-4xl font-bold class="bg-[linear-gradient(120deg,#7ce1d1_30%,#2a8cb4)]" bg-clip-text text-transparent inline-block>Slidev</div>
+      </div>
+    </div>
+    <div px4 bg-teal:20 rounded-2xl flex="~ col gap4 justify-center items-center">
+      <div text-4xl i-logos-tailwindcss-icon />
+      <div text-3xl font-bold class="bg-[linear-gradient(120deg,#7ce1d1_30%,#2a8cb4)]" bg-clip-text text-transparent inline-block>tailwindcss</div>
+      <div font-bold text-xl text-center op80>Utility-first<br>CSS Framework</div>
+    </div>
+    <div px4 bg-sky:30 rounded-2xl flex="~ col gap4 justify-center items-center">
+      <div text-4xl i-logos-zod />
+      <div text-3xl font-bold text-blue>Zod</div>
+      <div font-bold text-xl text-center op80>TypeScript-first<br>Schema Validation</div>
+    </div>
+  </div>
+</div>
 
 ---
 layout: intro
