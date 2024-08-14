@@ -1,5 +1,6 @@
 import config from '@slidev/client/uno.config'
 import { mergeConfigs, presetWebFonts } from 'unocss'
+import { createLocalFontProcessor } from '@unocss/preset-web-fonts/local'
 
 export default mergeConfigs([
   config,
@@ -15,6 +16,17 @@ export default mergeConfigs([
           fast: 'Ubuntu',
           hand: 'Caveat',
         },
+        // This will download the fonts and serve them locally
+        processors: createLocalFontProcessor({
+        // Directory to cache the fonts
+          cacheDir: 'node_modules/.cache/unocss/fonts',
+
+          // Directory to save the fonts assets
+          fontAssetsDir: 'public/assets/fonts',
+
+          // Base URL to serve the fonts from the client
+          fontServeBaseUrl: '/assets/fonts',
+        }),
       }),
     ],
   },
